@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Test_ForTraining__2_
 {
-    class Buy
+    class Buy : IComparable<Buy>
     {
         private int id;
         private int day;
-        private int month;
         private int count;
         private int price;
 
@@ -18,12 +17,6 @@ namespace Test_ForTraining__2_
         {
             get { return day; }
             set { day = value; }
-        }
-
-        public int Month
-        {
-            get { return month; }
-            set { month = value; }
         }
 
         public int Count
@@ -38,20 +31,10 @@ namespace Test_ForTraining__2_
             set { price = value; }
         }
 
-        public Buy ()
-        {
-            this.id = 0;
-            this.day = 1;
-            this.month = 1;
-            this.count = 1;
-            this.price = 300;
-        }
-
-        public Buy ( int id, int day, int month, int count, int price )      
+        public Buy ( int id, int day, int count, int price )      
         {
             this.id = id;
             this.day = day;
-            this.month = month;
             this.count = count;
             this.price = price;
         }
@@ -61,11 +44,11 @@ namespace Test_ForTraining__2_
             return price * count;
         }
 
-        public int CompareTo ( Buy obj )
+        public int CompareTo ( Buy temp )
         {
-            if ( obj.Day < this.Day )
+            if ( temp.Day < this.Day )
                 return 1;
-            else if ( obj.Day > this.Day )
+            else if ( temp.Day > this.Day )
             {
                 return -1;
             }
@@ -75,7 +58,7 @@ namespace Test_ForTraining__2_
 
         public override string ToString ( )
         {
-            return string.Format ( "День: {0}, Месяц: {1}, Кол-во: {2}, Цена: {3}, Общая ст-ть: {4}", Day, Month, Count, Price, Cost ( ) );
+            return string.Format ( "Day: {0,2}, Count: {1,2}, Price: {2,4}, Cost: {3,5}", Day, Count, Price, Cost ( ) );
         }
     }
 }

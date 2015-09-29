@@ -43,13 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Buy.cs" />
-    <Compile Include="BuyFactory.cs" />
     <Compile Include="BuyWithBonusItem.cs" />
     <Compile Include="BuyWithDiscontPrecent.cs" />
     <Compile Include="BuyWithFixedDiscont.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Store.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

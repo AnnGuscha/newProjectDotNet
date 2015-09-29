@@ -9,14 +9,11 @@ namespace Test_ForTraining__2_
     class BuyWithBonusItem : Buy
     {
         private Buy bonusItem;
-        public BuyWithBonusItem(int id, int day, int month, int count, int price, Buy bonusItem) : base(id, day, month, count, price)
+        public BuyWithBonusItem(int id, int day, int count, int price, Buy bonusItem) : base(id, day, count, price)
         {
             this.bonusItem = bonusItem;
         }
 
-        public BuyWithBonusItem ( )
-            : base ( )
-        { }
         public override int Cost()
         {
             int cost;
@@ -33,7 +30,7 @@ namespace Test_ForTraining__2_
 
         public override string ToString()
         {
-            return base.ToString ( ) + "Стоимость бонусного товара: " + bonusItem.Price;
+            return base.ToString ( ) + ", Bonus item cost: " + bonusItem.Price;
         }
     }
 }
